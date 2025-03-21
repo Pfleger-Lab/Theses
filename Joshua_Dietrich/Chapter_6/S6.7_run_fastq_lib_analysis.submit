@@ -1,0 +1,19 @@
+requirements  = OpSysandVer == "CentOS7"
+#this isn’t necessary, but I like to ensure I always run stuff on the same OS platform for consistency
+request_cpus = 2
+#this can be higher, but the more you request the fewer slots there will be to run your program
+request_memory = 16GB
+#you can change this too, but with the same caveat as above, more RAM means fewer slots to run your program
+executable = /bin/bash
+arguments = run_fastq_lib_analysis.sh
+#this is a small bash script that will activate the conda environment and then run your python program
+#notification = Always
+#this will email you when the program stops, either by error or normally by completion
+notify_user = jdietrich3@wisc.edu
+output = output.txt
+#anything that would be printed to the terminal will be written here. You can name this whatever you want.
+error = error.txt
+#any error messages will be printed here. You can name this whatever you want.
+log = log.txt
+#log of the Condor process. You can name this whatever you want.
+queue
